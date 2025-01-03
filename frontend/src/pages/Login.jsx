@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar.jsx'
 import PasswordInput from '../components/PasswordInput.jsx'
 
-import { validateEmail } from '../utils/validate.js'
+import { validateEmail } from '../utils/utils.js'
 
 function Login() {
     const [email, setEmail] = useState("")
