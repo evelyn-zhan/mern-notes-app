@@ -8,27 +8,27 @@ function Navbar() {
     const [searchQuery, setSearchQuery] = useState("")
     const navigate = useNavigate()
     
-    const onLogOutHandler = () => {
+    const onLogOut = () => {
         navigate("/login")
     }
 
-    const onSearchChangeHandler = (event) => {
+    const onSearchChange = (event) => {
         setSearchQuery(event.target.value)
     }
 
-    const onSearchHandler = () => {
+    const onSearch = () => {
         
     }
 
-    const onClearHandler = () => {
+    const onClear = () => {
         setSearchQuery("")
     }
 
     return (
         <div className="px-8 py-4 flex items-center justify-between bg-white drop-shadow">
             <h2 className="text-xl font-medium text-black">Notes App</h2>
-            <SearchBar value={searchQuery} onSearchChangeHandler={onSearchChangeHandler} onSearchHandler={onSearchHandler} onClearHandler={onClearHandler} />
-            <ProfileInfo onLogOutHandler={onLogOutHandler} />
+            <SearchBar value={searchQuery} onSearchChange={onSearchChange} onSearch={onSearch} onClear={onClear} />
+            <ProfileInfo onLogOut={onLogOut} />
         </div>
     )
 }

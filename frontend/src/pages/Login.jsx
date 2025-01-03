@@ -11,15 +11,15 @@ function Login() {
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
 
-    const onEmailChangeHandler = (event) => {
+    const onEmailChange = (event) => {
         setEmail(event.target.value)
     }
 
-    const onPasswordChangeHandler = (event) => {
+    const onPasswordChange = (event) => {
         setPassword(event.target.value)
     }
 
-    const onLoginHandler = async (event) => {
+    const onLogin = async (event) => {
         event.preventDefault()
 
         if (!validateEmail(email)) {
@@ -43,11 +43,11 @@ function Login() {
 
             <div className="mt-28 flex items-center justify-center">
                 <div className="w-96 px-7 py-10 bg-white border rounded-md">
-                    <form onSubmit={onLoginHandler}>
+                    <form onSubmit={onLogin}>
                         <h4 className="text-2xl mb-6">Login</h4>
                         
-                        <input type="text" placeholder="E-mail" value={email} onChange={onEmailChangeHandler} className="input-box" />
-                        <PasswordInput value={password} onPasswordChangeHandler={onPasswordChangeHandler} />
+                        <input type="text" placeholder="E-mail" value={email} onChange={onEmailChange} className="input-box" />
+                        <PasswordInput value={password} onPasswordChange={onPasswordChange} />
                         
                         { error && <p className="pb-1 text-red-500 text-xs">{error}</p> }
 

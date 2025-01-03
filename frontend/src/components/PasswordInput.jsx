@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function PasswordInput({ placeholder, value, onPasswordChangeHandler }) {
+function PasswordInput({ placeholder, value, onPasswordChange }) {
     const [showPassword, setShowPassword] = useState(false)
 
     const toggleShowPassword = () => {
@@ -9,7 +9,7 @@ function PasswordInput({ placeholder, value, onPasswordChangeHandler }) {
 
     return (
         <div className="mb-3 px-4 flex items-center bg-transparent border-[1.5px] rounded-md">
-            <input type={showPassword ? "text" : "password"} placeholder={placeholder || "Password"} value={value} onChange={onPasswordChangeHandler} className="w-full mr-3 py-3 text-sm bg-transparen rounded-md outline-none" />
+            <input type={showPassword ? "text" : "password"} placeholder={placeholder || "Password"} value={value} onChange={onPasswordChange} className="w-full mr-3 py-3 text-sm bg-transparen rounded-md outline-none" />
             {   
                 showPassword
                 ? <i className="ri-eye-fill text-primary cursor-pointer" onClick={toggleShowPassword}></i>

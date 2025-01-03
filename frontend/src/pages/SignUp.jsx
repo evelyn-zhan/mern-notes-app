@@ -12,19 +12,19 @@ function SignUp() {
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
 
-    const onNameChangeHandler = (event) => {
+    const onNameChange = (event) => {
         setName(event.target.value)
     }
 
-    const onEmailChangeHandler = (event) => {
+    const onEmailChange = (event) => {
         setEmail(event.target.value)
     }
 
-    const onPasswordChangeHandler = (event) => {
+    const onPasswordChange = (event) => {
         setPassword(event.target.value)
     }
 
-    const onSignUpHandler = async (event) => {
+    const onSignUp = async (event) => {
         event.preventDefault()
 
         if (!name) {
@@ -53,12 +53,12 @@ function SignUp() {
 
             <div className="mt-28 flex items-center justify-center">
                 <div className="w-96 px-7 py-10 bg-white border rounded-md">
-                    <form onSubmit={onSignUpHandler}>
+                    <form onSubmit={onSignUp}>
                         <h4 className="text-2xl mb-6">Sign Up</h4>
 
-                        <input type="text" placeholder="Name" value={name} onChange={onNameChangeHandler} className="input-box" />
-                        <input type="text" placeholder="E-mail" value={email} onChange={onEmailChangeHandler} className="input-box" />
-                        <PasswordInput value={password} onPasswordChangeHandler={onPasswordChangeHandler} />
+                        <input type="text" placeholder="Name" value={name} onChange={onNameChange} className="input-box" />
+                        <input type="text" placeholder="E-mail" value={email} onChange={onEmailChange} className="input-box" />
+                        <PasswordInput value={password} onPasswordChange={onPasswordChange} />
 
                         { error && <p className="pb-1 text-red-500 text-xs">{error}</p> }
 
